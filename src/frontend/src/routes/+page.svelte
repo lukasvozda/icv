@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { createActor } from '../../../declarations/backend';
 
-	import { LightSwitch } from '@skeletonlabs/skeleton';
-
 	import { Toast, toastStore } from '@skeletonlabs/skeleton';
 	import type { ToastSettings } from '@skeletonlabs/skeleton';
 	import { ProgressRadial } from '@skeletonlabs/skeleton';
@@ -30,7 +28,8 @@
 
 			const t: ToastSettings = {
 				message: greeting,
-				timeout: 10000
+				timeout: 10000,
+				background: 'variant-filled-primary',
 			};
 			toastStore.trigger(t);
 		} catch (err: unknown) {
@@ -42,16 +41,64 @@
 </script>
 
 <main>
-	<LightSwitch />
+	<section>
+		<div class="container mx-auto flex px-5 md:py-24 md:flex-row flex-col ">
+			<div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0">
+				<h1 class="h1">Lukas Vozda</h1>
+				<h2 class="mb-4">CTO at Proficio & Indie Developer</h2>
+				<p class="mb-8 leading-relaxed">I'm a tech and data enthusiast and have been working for 7 years as a Head of Analytics & CTO at Proficio. I write about my work and my other passions on my blog. Want to know more about my skills and carrier? Check out my online resume.</p>
+				<div class="flex">
+					<a href="/blog" class="inline-flex btn btn-lg variant-filled ">
+						<svg class="mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" >
+							<path
+								d="M5.433 13.917l1.262-3.155A4 4 0 017.58 9.42l6.92-6.918a2.121 2.121 0 013 3l-6.92 6.918c-.383.383-.84.685-1.343.886l-3.154 1.262a.5.5 0 01-.65-.65z" />
+							<path
+								d="M3.5 5.75c0-.69.56-1.25 1.25-1.25H10A.75.75 0 0010 3H4.75A2.75 2.75 0 002 5.75v9.5A2.75 2.75 0 004.75 18h9.5A2.75 2.75 0 0017 15.25V10a.75.75 0 00-1.5 0v5.25c0 .69-.56 1.25-1.25 1.25h-9.5c-.69 0-1.25-.56-1.25-1.25v-9.5z" />
+						</svg>
+						View my blogposts</a>
+					<a href="/resume" class="inline-flex btn btn-lg variant-filled ml-4">
+						<svg class="mr-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z"></path>
+						</svg>
+						View my resume</a>
+				</div>
+			</div>
+			<div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 h-full">
+				<img class="object-cover object-center rounded" alt="hero" src="lukas500.webp">
+			</div>
+		</div>
+	</section>
+	<hr class="!border-t-8 !border-double my-8 sm:my-0" />
+	<section>
+		<div class="container md:py-24">
+			<h1 class="h1">What I do</h1>
+			<p>I have 8+ years experience of performing in an online commerce enviroment and as a freelance analyst/developer. I went through a lot of online business models (from B2B to ecommerce) and helped our clients build realiable and automated reporting. Started off as a single analyst in the company, grew up to the team of 10 people. Below are my skills and tools that I use daily.</p>
+		</div>
+	</section>	
 
-	<h1 class="h1">Skeleton H1</h1>
-	<h2 class="h2">Skeleton H2</h2>
-	<h3 class="h3">Skeleton H3</h3>
-	<h4 class="h4">Skeleton H4</h4>
-	<h5 class="h5">Skeleton H5</h5>
-	<h6 class="h6">Skeleton H6</h6>
-
-	<h1 class="h1">
+	<section>
+		<div class="container  mx-auto">
+			<div class="flex flex-wrap">
+				<div class="xl:w-1/4 lg:w-1/2 md:w-full px-2 py-6">
+					<h2 class="text-lg sm:text-xl mb-2">Shooting Stars</h2>
+					<p class="leading-relaxed text-base mb-4">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+				</div>
+				<div class="xl:w-1/4 lg:w-1/2 md:w-full px-2 py-6">
+					<h2 class="text-lg sm:text-xl mb-2">The Catalyzer</h2>
+					<p class="leading-relaxed text-base mb-4">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+				</div>
+				<div class="xl:w-1/4 lg:w-1/2 md:w-full px-2 py-6">
+					<h2 class="text-lg sm:text-xl mb-2">Neptune</h2>
+					<p class="leading-relaxed text-base mb-4">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+				</div>
+				<div class="xl:w-1/4 lg:w-1/2 md:w-full px-2 py-6">
+					<h2 class="text-lg sm:text-xl mb-2">Melanchole</h2>
+					<p class="leading-relaxed text-base mb-4">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+				</div>
+			</div>
+		</div>
+	</section>	
+			<!-- <h1 class="h1">
 		<span
 			class="bg-gradient-to-br from-blue-500 to-cyan-300 bg-clip-text text-transparent box-decoration-clone"
 			>Design.</span
@@ -68,18 +115,13 @@
 			class="bg-gradient-to-br from-pink-500 to-violet-500 bg-clip-text text-transparent box-decoration-clone"
 			>Deploy.</span
 		>
-	</h1>
+	</h1> -->
 
-	<blockquote class="blockquote">
-		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia atque consectetur saepe
-		accusantium quam odio earum assumenda quisquam nesciunt voluptates consequuntur temporibus
-		cupiditate id neque quo, suscipit recusandae laboriosam et.
-	</blockquote>
 
-	<img src="logo2.svg" alt="DFINITY logo" />
+	<!-- <img src="logo2.svg" alt="DFINITY logo" />
 	<br />
-	<br />
-	<form on:submit|preventDefault={handleOnSubmit}>
+	<br /> -->
+	<!-- <form on:submit|preventDefault={handleOnSubmit}>
 		<label for="name">Enter your name:</label>
 		<input
 			id="name"
@@ -98,163 +140,9 @@
 	{/if}
 	<section id="greeting">
 		{greeting}
-	</section>
+	</section> -->
 
-	<div class="container dark:bg-slate-950">
-		<div class="header">
-			<div class="full-name">
-				<span class="first-name">John</span> 
-				<span class="last-name">Doe</span>
-			</div>
-			<div class="contact-info">
-				<span class="email">Email: </span>
-				<span class="email-val">john.doe@gmail.com</span>
-				<span class="separator"></span>
-				<span class="phone">Phone: </span>
-				<span class="phone-val">111-222-3333</span>
-			</div>
-			
-			<div class="about">
-				<span class="position">Front-End Developer </span>
-				<span class="desc">
-					I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow. 
-				</span>
-			</div>
-		</div>
-		 <div class="details">
-			<div class="section">
-				<div class="section__title">Experience</div>
-				<div class="section__list">
-					<div class="section__list-item">
-						<div class="left">
-							<div class="name">KlowdBox</div>
-							<div class="addr">San Fr, CA</div>
-							<div class="duration">Jan 2011 - Feb 2015</div>
-						</div>
-						<div class="right">
-							<div class="name">Fr developer</div>
-							<div class="desc">did This and that</div>
-						</div>
-					</div>
-									<div class="section__list-item">
-						<div class="left">
-							<div class="name">Akount</div>
-							<div class="addr">San Monica, CA</div>
-							<div class="duration">Jan 2011 - Feb 2015</div>
-						</div>
-						<div class="right">
-							<div class="name">Fr developer</div>
-							<div class="desc">did This and that</div>
-						</div>
-					</div>
 	
-				</div>
-			</div>
-			<div class="section">
-				<div class="section__title">Education</div>
-				<div class="section__list">
-					<div class="section__list-item">
-						<div class="left">
-							<div class="name">Sample Institute of technology</div>
-							<div class="addr">San Fr, CA</div>
-							<div class="duration">Jan 2011 - Feb 2015</div>
-						</div>
-						<div class="right">
-							<div class="name">Fr developer</div>
-							<div class="desc">did This and that</div>
-						</div>
-					</div>
-					<div class="section__list-item">
-						<div class="left">
-							<div class="name">Akount</div>
-							<div class="addr">San Monica, CA</div>
-							<div class="duration">Jan 2011 - Feb 2015</div>
-						</div>
-						<div class="right">
-							<div class="name">Fr developer</div>
-							<div class="desc">did This and that</div>
-						</div>
-					</div>
-	
-				</div>
-				
-		</div>
-			 <div class="section">
-				<div class="section__title">Projects</div> 
-				 <div class="section__list">
-					 <div class="section__list-item">
-						 <div class="name">DSP</div>
-						 <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow.</div>
-					 </div>
-					 
-					 <div class="section__list-item">
-											<div class="name">DSP</div>
-						 <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow. <a href="/login">link</a>
-						 </div>
-					 </div>
-				 </div>
-			</div>
-			 <div class="section">
-				 <div class="section__title">Skills</div>
-				 <div class="skills">
-					 <div class="skills__item">
-						 <div class="left"><div class="name">
-							 Javascript
-							 </div></div>
-						 <div class="right">
-														<input  id="ck1" type="checkbox" checked/>
-	
-							 <label for="ck1"></label>
-														<input id="ck2" type="checkbox" checked/>
-	
-								<label for="ck2"></label>
-													 <input id="ck3" type="checkbox" />
-	
-								<label for="ck3"></label>
-														 <input id="ck4" type="checkbox" />
-							<label for="ck4"></label>
-														<input id="ck5" class="checked:dark:bg-red-700" type="checkbox" />
-								<label for="ck5"></label>
-	
-						 </div>
-					 </div>
-					 
-				 </div>
-				 <div class="skills__item">
-						 <div class="left"><div class="name">
-							 CSS</div></div>
-						 <div class="right">
-														<input  id="ck1" type="checkbox" checked/>
-	
-							 <label for="ck1"></label>
-														<input id="ck2" type="checkbox" checked/>
-	
-								<label for="ck2"></label>
-													 <input id="ck3" type="checkbox" />
-	
-								<label for="ck3"></label>
-														 <input id="ck4" type="checkbox" />
-							<label for="ck4"></label>
-														<input id="ck5" type="checkbox" />
-								<label for="ck5"></label>
-	
-						 </div>
-					 </div>
-					 
-				 </div>
-			 <div class="section">
-			 <div class="section__title">
-				 Interests
-				 </div>
-				 <div class="section__list">
-					 <div class="section__list-item">
-										Football, programming.
-						</div>
-				 </div>
-			 </div>
-			 </div>
-		</div>
-
 
 	<Toast />
 </main>
@@ -266,9 +154,6 @@
 		/* ... */
 	}
 
-	h1 {
-		font-family: 'Quicksand', sans-serif;
-	}
 	img {
 		max-width: 50vw;
 		max-height: 25vw;
@@ -296,161 +181,4 @@
 	#greeting:empty {
 		display: none;
 	}
-
-	* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html {
-  height: 100%;  
-}
-
-body {
-  min-height: 100%;  
-  background: #eee;
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 26px;
-  padding-bottom: 50px;
-}
-
-.container {
-  max-width: 700px;   
-  margin: 0px auto 0px; 
-  box-shadow: 1px 1px 2px #DAD7D7;
-  border-radius: 3px;  
-  padding: 40px;
-  margin-top: 50px;
-}
-
-.header {
-  margin-bottom: 30px;
-  
-  .full-name {
-    font-size: 40px;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-  }
-  
-  .first-name {
-    font-weight: 700;
-  }
-  
-  .last-name {
-    font-weight: 300;
-  }
-  
-  .contact-info {
-    margin-bottom: 20px;
-  }
-  
-  .email ,
-  .phone {
-    color: #999;
-    font-weight: 300;
-  } 
-  
-  .separator {
-    height: 10px;
-    display: inline-block;
-    border-left: 2px solid #999;
-    margin: 0px 10px;
-  }
-  
-  .position {
-    font-weight: bold;
-    display: inline-block;
-    margin-right: 10px;
-    text-decoration: underline;
-  }
-}
-
-
-.details {
-  line-height: 20px;
-  
-  .section {
-    margin-bottom: 40px;  
-  }
-  
-  .section:last-of-type {
-    margin-bottom: 0px;  
-  }
-  
-  .section__title {
-    letter-spacing: 2px;
-    color: #54AFE4;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-  }
-  
-  .section__list-item {
-    margin-bottom: 40px;
-  }
-  
-  .section__list-item:last-of-type {
-    margin-bottom: 0;
-  }
-  
-  .left ,
-  .right {
-    vertical-align: top;
-    display: inline-block;
-  }
-  
-  .left {
-    width: 60%;    
-  }
-  
-  .right {
-    tex-align: right;
-    width: 39%;    
-  }
-  
-  .name {
-    font-weight: bold;
-  }
-  
-  a {
-    text-decoration: none;
-    color: #000;
-    font-style: italic;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-    color: #000;
-  }
-  
-  .skills {
-    
-  }
-    
-  .skills__item {
-    margin-bottom: 10px;  
-  }
-  
-  .skills__item .right {
-    input {
-      display: none;
-    }
-    
-    label {
-      display: inline-block;  
-      width: 20px;
-      height: 20px;
-      background: #C3DEF3;
-      border-radius: 20px;
-      margin-right: 3px;
-    }
-    
-    input:checked + label {
-      background: #79A9CE;
-    }
-  }
-}
-
 </style>
