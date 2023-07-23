@@ -13,7 +13,7 @@
 	import {
 		AppShell,
 		AppBar,
-		Avatar,
+		Avatar
 		//Drawer,
 		//drawerStore
 	} from '@skeletonlabs/skeleton';
@@ -31,6 +31,7 @@
 		classSidebar = classSidebar === 'w-0 lg:w-64' ? '' : 'w-0 lg:w-64';
 	}
 </script>
+
 <!-- <Drawer width="auto" class="hide-scrollbar">
 	<hr />
 	<Navigation />
@@ -50,17 +51,29 @@
 						</span>
 					</button>
 					<a href="/">
-						<Avatar src="lukas2.jpg" border="border-2 border-surface-300-600-token hover:!border-primary-500"
-							class="mr-4" initials="LV" width="w-12" background="bg-primary-500" />
+						<Avatar
+							src="lukas2.jpg"
+							border="border-2 border-surface-300-600-token hover:!border-primary-500"
+							class="mr-4"
+							initials="LV"
+							width="w-12"
+							background="bg-primary-500"
+						/>
 					</a>
-					<strong class="text-xl">lukasvozda.rocks</strong>
+					<strong class="text-xl">www.lukasvozda.rocks</strong>
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a href="/admin" class="btn variant-soft">
-					<svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+					<svg
+						fill="currentColor"
+						viewBox="0 0 20 20"
+						xmlns="http://www.w3.org/2000/svg"
+						aria-hidden="true"
+					>
 						<path
-							d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z" />
+							d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z"
+						/>
 					</svg>
 				</a>
 			</svelte:fragment>
@@ -72,7 +85,7 @@
 	<!-- (sidebarRight) -->
 	<!-- (pageHeader) -->
 	<!-- Router Slot -->
-	<div class="container md:mx-auto p-8 ">
+	<div class="container md:mx-auto p-8">
 		<slot />
 	</div>
 	<!-- ---- / ---- -->
