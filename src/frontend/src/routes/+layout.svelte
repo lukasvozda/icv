@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	export const prerender = true;
 
 	// Your selected Skeleton theme:
@@ -13,18 +13,32 @@
 	import {
 		AppShell,
 		AppBar,
-		Avatar
-		//Drawer,
-		//drawerStore
+		Avatar,
+		Drawer,
+		drawerStore,
+		modeCurrent,
+		setModeCurrent
 	} from '@skeletonlabs/skeleton';
+	import { setInitialClassState } from '@skeletonlabs/skeleton';
 
 	import Navigation from '../lib/components/navigation.svelte';
 
+	import { navigating } from '$app/stores';
+	import { loading } from '$lib/stores/loading.store';
+	import Loading from '$lib/components/Loading.svelte';
+	import { Toast } from '@skeletonlabs/skeleton';
+	import { onMount } from 'svelte';
+
+	$: $loading = !!$navigating;
+
 	let classSidebar = 'w-0 lg:w-64';
 
-	// function drawerOpen() {
-	// 	drawerStore.open({});
-	// }
+	function drawerOpen() {
+		drawerStore.open({});
+	}
+	onMount(() => setModeCurrent(false));
+
+	//console.log(setInitialClassState.toString())
 
 	function sidebarToggle() {
 		//alert("Toggle")
@@ -43,7 +57,7 @@
 				<div class="flex items-center">
 					<button class="lg:hidden btn btn-sm mr-4" on:click={sidebarToggle}>
 						<span>
-							<svg viewBox="0 0 100 80" class="fill-token w-4 h-4">
+							<svg viewBox="0 0 100 80" class="fill-token w-4 h-4 icon">
 								<rect width="100" height="20" />
 								<rect y="30" width="100" height="20" />
 								<rect y="60" width="100" height="20" />
@@ -60,12 +74,13 @@
 							background="bg-primary-500"
 						/>
 					</a>
-					<strong class="text-xl">www.lukasvozda.rocks</strong>
+					<strong class="text-xl">lukasvozda.rocks</strong>
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a href="/admin" class="btn variant-soft">
 					<svg
+						class="icon"
 						fill="currentColor"
 						viewBox="0 0 20 20"
 						xmlns="http://www.w3.org/2000/svg"
@@ -81,11 +96,26 @@
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
 		<Navigation />
+		<!-- <section class="p-4 pb-20 space-y-4 overflow-y-auto">
+			<p class="font-bold pl-4 text-2xl">Titulek</p>
+				<p class="font-bold pl-4 text-2xl">Title</p>
+				<nav class="list-nav">
+					<ul>
+							<li>
+								<a href="#" data-sveltekit-preload-data="hover">
+									<span class="flex-auto">"Label"</span>
+									<span class="badge variant-filled-secondary">Badge</span>
+								</a>
+							</li>
+					</ul>
+				</nav>
+		</section> -->
 	</svelte:fragment>
 	<!-- (sidebarRight) -->
 	<!-- (pageHeader) -->
 	<!-- Router Slot -->
 	<div class="container md:mx-auto p-8">
+		<Loading />
 		<slot />
 	</div>
 	<!-- ---- / ---- -->
@@ -93,13 +123,13 @@
 	<!-- <svelte:fragment slot="pageFooter">Footer</svelte:fragment>
 	<svelte:fragment slot="footer">Footer</svelte:fragment> -->
 </AppShell>
+<Toast />
 
 <style global>
-	svg {
+	.icon {
 		max-width: 30px !important;
 		display: block;
 		text-align: center;
-		margin: auto;
 		width: 20px;
 	}
 
@@ -108,5 +138,9 @@
 		text-align: center;
 		margin: auto;
 		margin-bottom: 20px;
+	}
+
+	#page-content {
+		position: relative;
 	}
 </style>

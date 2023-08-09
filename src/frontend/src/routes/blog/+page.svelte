@@ -3,7 +3,7 @@
 </script>
 
 <h1 class="h1">Blog</h1>
-<div class="w-full text-token grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+<div class="w-full text-token grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8">
 	<!-- Detailed -->
 	{#each { length: 8 } as _, i}
 		<a class="card variant-soft card-hover overflow-hidden" href="#">

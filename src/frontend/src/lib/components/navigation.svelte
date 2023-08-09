@@ -1,7 +1,9 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 
 	import { AppRail, AppRailAnchor, LightSwitch } from '@skeletonlabs/skeleton';
+	// import { Drawer, drawerStore } from '@skeletonlabs/skeleton';
+	// import type { DrawerSettings } from '@skeletonlabs/skeleton';
 </script>
 
 <AppRail height="h-full">
@@ -9,6 +11,7 @@
 	<AppRailAnchor href="/" title="Account" selected={$page.url.pathname === '/'}>
 		<svelte:fragment slot="lead">
 			<svg
+				class="icon"
 				fill="currentColor"
 				viewBox="0 0 20 20"
 				xmlns="http://www.w3.org/2000/svg"
@@ -26,6 +29,7 @@
 	<AppRailAnchor href="blog" title="Account" selected={$page.url.pathname === '/blog'}>
 		<svelte:fragment slot="lead">
 			<svg
+				class="icon"
 				fill="currentColor"
 				viewBox="0 0 20 20"
 				xmlns="http://www.w3.org/2000/svg"
@@ -44,6 +48,7 @@
 	<AppRailAnchor href="resume" title="Account" selected={$page.url.pathname === '/resume'}>
 		<svelte:fragment slot="lead">
 			<svg
+				class="icon"
 				fill="none"
 				stroke="currentColor"
 				stroke-width="1.5"
@@ -63,6 +68,7 @@
 	<AppRailAnchor href="nostr" title="Account" selected={$page.url.pathname === '/nostr'}>
 		<svelte:fragment slot="lead">
 			<svg
+				class="icon"
 				fill="none"
 				stroke="currentColor"
 				stroke-width="1.5"

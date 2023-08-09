@@ -1,10 +1,10 @@
 <script lang="ts">
 	import NDK, { type NDKUserProfile } from '@nostr-dev-kit/ndk';
 	import { onMount } from 'svelte';
-	import { Avatar, ProgressRadial } from '@skeletonlabs/skeleton';
-	import { nip19 } from 'nostr-tools';
-	import type { ProfilePointer } from 'nostr-tools/lib/nip19';
-	import { Int } from '@dfinity/candid/lib/cjs/idl';
+	import { Avatar } from '@skeletonlabs/skeleton';
+	//import { nip19 } from 'nostr-tools';
+	//import type { ProfilePointer } from 'nostr-tools/lib/nip19';
+	//import { Int } from '@dfinity/candid/lib/cjs/idl';
 
 	let feedEvents = [''];
 
@@ -99,8 +99,9 @@
 			width="w-24"
 			background="bg-primary-500"
 		/>
-		<h2 class="h2 my-4">{user.profile?.displayName}</h2>
-		<p>{user.profile?.about}</p>
+		<h2 class="h2 mt-4">{user.profile?.displayName}</h2>
+		<span>@{user.profile?.name}</span>
+		<p class="mt-4">{user.profile?.about}</p>
 		<p>Lightning Network address: {user.profile?.lud16}</p>
 	</section>
 {:catch error}
@@ -129,6 +130,21 @@
 {:then events}
 	{#each Array.from(events) as event}
 		<section class="card p-4 my-4 w-2/3">
+			<div class="post-head mx-auto flex md:flex-row flex-col">
+				<div>
+					<Avatar
+						src="lukas small.jpg"
+						class="mr-4 mt-1"
+						initials="LV"
+						width="w-10"
+						background="bg-primary-500"
+					/>
+				</div>
+				<div>
+					<div class="font-bold">Lukas Vozda</div>
+					<span class="text-sm">@lukas</span>
+				</div>
+			</div>
 			<p class="my-2 text-lg">{event.content}</p>
 			<p class="text-sm">{new Date(Number(event.created_at) * 1000)}</p>
 		</section>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { signOut } from '@junobuild/core';
-	import { Toast, toastStore } from '@skeletonlabs/skeleton';
+	import { toastStore } from '@skeletonlabs/skeleton';
 	import type { ToastSettings } from '@skeletonlabs/skeleton';
 	//import { userSignedInStore } from '$lib/stores/user.store';
 
@@ -31,11 +31,29 @@
 		<button type="button" class="text" on:click|stopPropagation={signOut}>Sign-out</button>
 	</p>
 {/if} -->
-<button type="button" class="btn btn-lg variant-filled" on:click|stopPropagation={logOut}
-	>Sign-out</button
+<button
+	type="button"
+	class="btn btn-lg variant-filled"
+	title="Log out"
+	on:click|stopPropagation={logOut}
+	><svg
+		class="mr-2 icon"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="1.5"
+		viewBox="0 0 24 24"
+		xmlns="http://www.w3.org/2000/svg"
+		aria-hidden="true"
+	>
+		<path
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+		/>
+	</svg> Log out</button
 >
 
-<Toast />
+<!-- <Toast /> -->
 
 <style lang="scss">
 	button.text {

@@ -3,7 +3,6 @@
 
 	import { Toast, toastStore } from '@skeletonlabs/skeleton';
 	import type { ToastSettings } from '@skeletonlabs/skeleton';
-	import { ProgressRadial } from '@skeletonlabs/skeleton';
 
 	let input = '';
 	let disabled = false;
@@ -56,7 +55,7 @@
 				<div class="flex">
 					<a href="/blog" class="inline-flex btn btn-lg variant-filled">
 						<svg
-							class="mr-2"
+							class="mr-2 icon"
 							fill="currentColor"
 							viewBox="0 0 20 20"
 							xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +72,7 @@
 					>
 					<a href="/resume" class="inline-flex btn btn-lg variant-filled ml-4">
 						<svg
-							class="mr-2"
+							class="mr-2 icon"
 							fill="none"
 							stroke="currentColor"
 							stroke-width="1.5"
